@@ -31,4 +31,4 @@ jobs:
             sudo docker stop deletecustomer || true
             sudo docker rm deletecustomer || true
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/projectawsrestaurant-deletecustomer:latest
-            sudo docker run -d -p 5001:5000 --name deletecustomer ${{ secrets.DOCKER_USERNAME }}/projectawsrestaurant-deletecustomer:latest
+            sudo docker run -d -p 5001:5000 --name deletecustomer --restart always ${{ secrets.DOCKER_USERNAME }}/projectawsrestaurant-deletecustomer:latest
